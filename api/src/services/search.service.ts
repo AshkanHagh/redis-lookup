@@ -5,20 +5,20 @@ import type { TErrorHandler, TSearchResult } from '../types/index.type';
 
 export const searchService = async (query : string) : Promise<TSearchResult | []> => {
     try {
-        const start : number = performance.now();
         if(!query) throw new InvalidQueryError();
-
+        const start : number = performance.now();
         const matchedCountries : string[] = [];
-        const rank : number | null = await redis.zrank('terms', query);
-        if(!rank) return [];
 
-        const temp = await redis.zrange<string[]>('terms', rank, rank + 100);
-        for (const element of temp) {
-            if(!element.startsWith(query)) break;
-            if(element.endsWith('*')) matchedCountries.push(element.substring(0, element.length - 1));
+        const countryIndex : number | null = await redis.zrank('terms', query);
+        if(!countryIndex) return[];
+
+        const countries : string[] = await redis.zrange<string[]>('terms', countryIndex, countryIndex + 100);
+        for(const country of countries) {
+            if(!country.startsWith(query)) break;
+            if(country.endsWith('*')) matchedCountries.push(country.substring(0, country.length - 1));
         }
-        const end : number = performance.now();
-        return {duration : `${Math.round(end - start)} ms`, matchedCountries} as TSearchResult
+        const end :  number = performance.now();
+        return {duration : `${Math.round(end - start)} ms`, matchedCountries};
         
     } catch (err : unknown) {
         const error = err as TErrorHandler;
