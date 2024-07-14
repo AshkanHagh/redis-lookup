@@ -1,11 +1,10 @@
 {
-  "name": "redis-search",
-  "version": "0.0.1",
-  "description": "",
+  "name": "upstash-search",
+  "version": "0.1.1",
+  "description": "Speed Search is a high-performance search service built on Redis using Upstash. It provides methods for populating the database with structured data for fast and efficient search operations",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage": "",
   "repository": {
     "url": "https://github.com/AshkanHagh/speed-search"
   },
@@ -13,11 +12,10 @@
     "build": "tsup"
   },
   "keywords": [
-    "upstash",
     "redis",
     "@upstash/redis"
   ],
-  "author": "Ashkan-haghdoost",
+  "author": "haghdoost",
   "license": "MIT",
   "devDependencies": {
     "tsup": "^8.1.0",
