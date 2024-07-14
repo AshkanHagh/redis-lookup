@@ -1,12 +1,12 @@
 {
-  "name": "upstash-search",
-  "version": "0.1.1",
-  "description": "Speed Search is a high-performance search service built on Redis using Upstash. It provides methods for populating the database with structured data for fast and efficient search operations",
+  "name": "redis-lookup",
+  "version": "0.1.2",
+  "description": "Redis Lookup is a high-performance search package designed to perform rapid searches on user-defined datasets using Redis. By leveraging the capabilities of Redis and Upstash, this package provides efficient search functionalities, such as finding users or products based on partial matches. It is particularly useful for applications requiring quick lookup and autocomplete features.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/AshkanHagh/speed-search"
+    "url": "https://github.com/AshkanHagh/"
   },
   "scripts": {
     "build": "tsup"

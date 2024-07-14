@@ -1,8 +1,8 @@
-# Redis Search
+# Redis Lookup [Demo](redis-lookup.up.railway.app)
 
 ## Description
 
-Redis Search is a high-performance REST API service designed to perform rapid searches on user-defined datasets using [Redis](https://redis.io/). By leveraging the capabilities of Redis and [Upstash](https://upstash.com/), this project provides efficient search functionalities, such as finding users or products based on partial matches. The service is particularly useful for applications requiring quick lookup and autocomplete features.
+Redis Lookup is a high-performance REST API service designed to perform rapid searches on user-defined datasets using [Redis](https://redis.io/). By leveraging the capabilities of Redis and [Upstash](https://upstash.com/), this project provides efficient search functionalities, such as finding users or products based on partial matches. The service is particularly useful for applications requiring quick lookup and autocomplete features.
 
 ## Features
 
@@ -21,9 +21,9 @@ Redis Search is a high-performance REST API service designed to perform rapid se
 ## Package Installation
 
 ### Install the Package
-To use the `upstash-search` package in your project, install it via npm:
+To use the `@redis/lookup` package in your project, install it via npm:
 ```shell
-npm install upstash-search
+npm install @redis/lookup
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ First, configure the Redis client using the provided URL and token from Upstash:
 
 
 ```typescript
-import { RedisClient } from 'upstash-search';
+import { RedisClient } from '@redis/lookup';
 
 RedisClient.configure('your_upstash_redis_url', 'your_upstash_redis_token');
 const redisClient = RedisClient.getInstance();

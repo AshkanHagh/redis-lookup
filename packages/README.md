@@ -1,44 +1,50 @@
-# Speed Search
+# Redis Lookup
 
-## Introduction
+## Description
 
-Speed Search is a high-performance search service built on Redis using Upstash. It provides methods for populating the database with structured data for fast and efficient search operations. The service is built with [TypeScript](https://www.typescriptlang.org/) and uses [Upstash Redis](https://upstash.com/).
+Redis Lookup is a high-performance search package designed to perform rapid searches on user-defined datasets using Redis. By leveraging the capabilities of Redis and Upstash, this package provides efficient search functionalities, such as finding users or products based on partial matches. It is particularly useful for applications requiring quick lookup and autocomplete features.
 
 ## Features
 
-- **Database Population**: Easily populate Redis with structured data.
-- **Search Functionality**: Perform searches with ranking and range queries.
+- **High-Performance Search**: Fast search operations leveraging Redis' in-memory data structure.
+- **Data Population**: Populate Redis with structured data for efficient searching.
+- **User and Product Lookup**: Easily find users or products based on partial input strings.
+- **Autocomplete Functionality**: Support for autocomplete search queries.
 
-## Installation
+## Package Installation
 
-### Install Package
+### Install the Package
+To use the `redis-lookup` package in your project, install it via npm:
 ```shell
-npm install upstash-search
+npm install redis-lookup
 ```
 
-## Examples
+## Usage
 
-### Populate redis
+### Configuring Redis Client
+First, configure the Redis client using the provided URL and token from Upstash:
+
+
 ```typescript
-import { RedisClient } from 'upstash-search'
+import { RedisClient } from 'redis-lookup';
 
-RedisClient.configure('your upstash redis url', 'your upstash redis token');
+RedisClient.configure('your_upstash_redis_url', 'your_upstash_redis_token');
 const redisClient = RedisClient.getInstance();
-
-const populate = async () => {
-    const data : string[] = [...];
-    await redisClient.populateDB('your key', data);
-};
 ```
 
-### Search in redis
+### Populating Redis with Data
+Populate the Redis database with data to enable fast search operations:
 ```typescript
-import { RedisClient } from 'upstash-search'
-
-RedisClient.configure('your upstash redis url', 'your upstash redis token');
-const redisClient = RedisClient.getInstance();
-
-const main = async (query : string) => {
-    return await redisClient.search('your key', query);
-};
+const data: string[] = ['example1', 'example2', 'example3'];
+await redisClient.populateDB('your_key', data);
 ```
+
+### Performing a Search
+Perform a search query to retrieve matched results from Redis:
+```typescript
+const results = await redisClient.search('your_key', 'query');
+console.log(results);
+```
+## License
+
+This project is licensed under the MIT License
