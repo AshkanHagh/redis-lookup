@@ -1,0 +1,29 @@
+{
+  "name": "redis-search",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "",
+  "repository": {
+    "url": "https://github.com/AshkanHagh/speed-search"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "upstash",
+    "redis",
+    "@upstash/redis"
+  ],
+  "author": "Ashkan-haghdoost",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.32.0"
+  }
+}
