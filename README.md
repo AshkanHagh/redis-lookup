@@ -21,9 +21,9 @@ Redis Lookup is a high-performance REST API service designed to perform rapid se
 ## Package Installation
 
 ### Install the Package
-To use the `@redis/lookup` package in your project, install it via npm:
+To use the `redis-lookup` package in your project, install it via npm:
 ```shell
-npm install @redis/lookup
+npm install redis-lookup
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ First, configure the Redis client using the provided URL and token from Upstash:
 
 
 ```typescript
-import { RedisClient } from '@redis/lookup';
+import { RedisClient } from 'redis-lookup';
 
 RedisClient.configure('your_upstash_redis_url', 'your_upstash_redis_token');
 const redisClient = RedisClient.getInstance();
